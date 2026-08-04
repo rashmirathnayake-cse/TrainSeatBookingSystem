@@ -1,19 +1,22 @@
 package com.rr.trainseatbooking.service;
 
 import com.rr.trainseatbooking.dto.request.TrainRequest;
+import com.rr.trainseatbooking.dto.response.TrainResponse;
 import com.rr.trainseatbooking.entity.Train;
 
 import java.util.List;
 
 public interface TrainService {
 
-    Train createTrain(TrainRequest request);
+    TrainResponse createTrain(TrainRequest request);
 
-    List<Train> getAllTrains();
+    List<TrainResponse> getAllTrains();
 
     Train getTrainById(Long id);
 
-    Train updateTrain(Long id, TrainRequest request);
+    TrainResponse getTrainInfoById(Long id);
+
+    TrainResponse updateTrain(Long id, TrainRequest request);
 
     void deleteTrain(Long id);
 

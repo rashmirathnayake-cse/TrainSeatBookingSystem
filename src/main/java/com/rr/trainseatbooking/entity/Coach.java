@@ -1,7 +1,7 @@
 package com.rr.trainseatbooking.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.rr.trainseatbooking.DataTypes.CoachType;
+import com.rr.trainseatbooking.enums.CoachType;
 import jakarta.persistence.*;
 import lombok.*;
 

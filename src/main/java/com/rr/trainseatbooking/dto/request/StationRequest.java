@@ -13,5 +13,4 @@ public class StationRequest {
 
     private Integer sequenceNumber;
 
-    private Double distanceFromOrigin;
 }

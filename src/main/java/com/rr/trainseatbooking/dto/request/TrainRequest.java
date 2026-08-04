@@ -13,6 +13,8 @@ public class TrainRequest {
 
     private String description;
 
+    private Long routeId;
+
     private Boolean active;
 
 }

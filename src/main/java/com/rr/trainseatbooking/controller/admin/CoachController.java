@@ -1,6 +1,5 @@
 package com.rr.trainseatbooking.controller.admin;
 
-
 import com.rr.trainseatbooking.dto.request.CoachRequest;
 import com.rr.trainseatbooking.dto.response.CoachResponse;
 import com.rr.trainseatbooking.entity.Coach;
@@ -45,7 +44,7 @@ public class CoachController {
 
 
     @GetMapping
-    public ResponseEntity<List<Coach>> getAll(){
+    public ResponseEntity<List<CoachResponse>> getAll(){
 
         return ResponseEntity.ok(
                 coachService.getAllCoaches()
@@ -56,7 +55,7 @@ public class CoachController {
 
 
     @GetMapping("/train/{trainId}")
-    public ResponseEntity<List<Coach>> getByTrain(
+    public ResponseEntity<List<CoachResponse>> getByTrain(
             @PathVariable Long trainId
     ){
 

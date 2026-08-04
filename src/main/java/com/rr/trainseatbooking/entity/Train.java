@@ -2,6 +2,7 @@ package com.rr.trainseatbooking.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.util.RouteMatcher;
 
 import java.util.List;
 
@@ -27,6 +28,10 @@ public class Train extends BaseEntity {
 
 
     private Boolean active;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "route_id", nullable = false)
+    private Route route;
 
 
     @OneToMany(

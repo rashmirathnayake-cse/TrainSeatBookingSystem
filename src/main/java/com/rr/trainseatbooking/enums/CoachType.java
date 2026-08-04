@@ -1,4 +1,4 @@
-package com.rr.trainseatbooking.DataTypes;
+package com.rr.trainseatbooking.enums;
 
 public enum CoachType {
 

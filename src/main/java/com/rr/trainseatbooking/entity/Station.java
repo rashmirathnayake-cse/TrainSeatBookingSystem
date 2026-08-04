@@ -24,7 +24,5 @@ public class Station extends BaseEntity {
     private Integer sequenceNumber;
 
 
-    @Column(nullable = false)
-    private Double distanceFromOrigin;
 
 }

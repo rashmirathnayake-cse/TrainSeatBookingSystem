@@ -22,7 +22,6 @@ public class StationServiceImpl implements StationService {
                 .name(request.getName())
                 .code(request.getCode())
                 .sequenceNumber(request.getSequenceNumber())
-                .distanceFromOrigin(request.getDistanceFromOrigin())
                 .build();
 
         return stationRepository.save(station);
@@ -47,7 +46,6 @@ public class StationServiceImpl implements StationService {
         station.setName(request.getName());
         station.setCode(request.getCode());
         station.setSequenceNumber(request.getSequenceNumber());
-        station.setDistanceFromOrigin(request.getDistanceFromOrigin());
 
         return stationRepository.save(station);
     }

@@ -1,7 +1,7 @@
 package com.rr.trainseatbooking.dto.request;
 
 
-import com.rr.trainseatbooking.DataTypes.CoachType;
+import com.rr.trainseatbooking.enums.CoachType;
 import lombok.Getter;
 import lombok.Setter;
 

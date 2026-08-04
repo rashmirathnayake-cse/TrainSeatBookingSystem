@@ -1,7 +1,5 @@
 package com.rr.trainseatbooking.service.impl;
 
-
-
 import com.rr.trainseatbooking.dto.request.CoachRequest;
 import com.rr.trainseatbooking.dto.response.CoachResponse;
 import com.rr.trainseatbooking.entity.Coach;
@@ -82,18 +80,42 @@ public class CoachServiceImpl implements CoachService {
 
 
     @Override
-    public List<Coach> getAllCoaches(){
+    public List<CoachResponse> getAllCoaches(){
 
-        return coachRepository.findAll();
+        List<Coach> coachList = coachRepository.findAll();
+        List<CoachResponse> coachResponse = new ArrayList<>(List.of());
+        for (Coach coach : coachList){
+            coachResponse.add(CoachResponse.builder()
+                    .id(coach.getId())
+                    .coachNumber(coach.getCoachNumber())
+                    .type(coach.getType())
+                    .seatCapacity(coach.getSeatCapacity())
+                    .trainId(coach.getTrain().getId())
+                    .build()
+            );
+        }
+
+        return coachResponse;
 
     }
 
 
 
     @Override
-    public List<Coach> getCoachesByTrain(Long trainId){
+    public List<CoachResponse> getCoachesByTrain(Long trainId){
 
-        return coachRepository.findByTrainId(trainId);
+        return coachRepository.findByTrainId(trainId)
+                .stream()
+                .map(coach -> {
+                    return CoachResponse.builder()
+                            .id(coach.getId())
+                            .coachNumber(coach.getCoachNumber())
+                            .type(coach.getType())
+                            .seatCapacity(coach.getSeatCapacity())
+                            .trainId(coach.getTrain().getId())
+                            .build();
+                })
+                .toList();
 
     }
 

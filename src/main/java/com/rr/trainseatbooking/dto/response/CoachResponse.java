@@ -1,6 +1,6 @@
 package com.rr.trainseatbooking.dto.response;
 
-import com.rr.trainseatbooking.DataTypes.CoachType;
+import com.rr.trainseatbooking.enums.CoachType;
 import lombok.Builder;
 import lombok.Getter;
 

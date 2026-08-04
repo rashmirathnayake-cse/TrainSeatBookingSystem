@@ -12,10 +12,10 @@ public interface CoachService {
     CoachResponse createCoach(CoachRequest request);
 
 
-    List<Coach> getAllCoaches();
+    List<CoachResponse> getAllCoaches();
 
 
-    List<Coach> getCoachesByTrain(Long trainId);
+    List<CoachResponse> getCoachesByTrain(Long trainId);
 
 
     Coach getCoachById(Long id);
